@@ -13,8 +13,8 @@ import lombok.ToString;
 @ToString
 public class Student {
 
-    private Integer m_nId;
-    private String m_sFirstName;
-    private String m_sLastName;
+    private Integer id;
+    private String firstName;
+    private String lastName;
 
 }

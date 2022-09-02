@@ -11,8 +11,19 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class SpringCourseApplication {
 
     public static void main(String[] args) {
-        ApplicationContext ctx
-                = new AnnotationConfigApplicationContext(AppConfig.class);
+//        1st approach
+//        ApplicationContext ctx
+//                = new AnnotationConfigApplicationContext(AppConfig.class);
+//
+//        IStudentService studentService = ctx.getBean(IStudentService.class);
+//        System.out.println(studentService.getAll());
+
+        //2nd approach
+        AnnotationConfigApplicationContext ctx
+                = new AnnotationConfigApplicationContext();
+
+        ctx.register(AppConfig.class);
+        ctx.refresh();
 
         IStudentService studentService = ctx.getBean(IStudentService.class);
         System.out.println(studentService.getAll());
