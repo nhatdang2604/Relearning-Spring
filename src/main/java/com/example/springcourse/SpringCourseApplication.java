@@ -5,11 +5,14 @@ import com.example.service.IStudentService;
 import com.example.service.ITutorService;
 import com.example.service.StudentService;
 import com.example.service.TutorService;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.io.ClassPathResource;
 
 //@SpringBootApplication
 public class SpringCourseApplication {
@@ -36,9 +39,14 @@ public class SpringCourseApplication {
         ApplicationContext ctx =
                 new ClassPathXmlApplicationContext("services.xml");
 
+
         IStudentService studentService = ctx.getBean(StudentService.class);
         System.out.println(studentService.getAll());
         ITutorService tutorService = ctx.getBean(TutorService.class);
         System.out.println(tutorService.getAll());
+
+        //Usage of factory
+        BeanFactory factory = new XmlBeanFactory(new ClassPathResource("services.xml"));
+        System.out.println(factory.getType("studentService"));
     }
 }
