@@ -10,11 +10,12 @@
 
         <!--Services-->
         <bean id="studentService"
-              class="com.example.service.StudentService"
-              factory-method="valueOf">
-                <constructor-arg>
-                        <value>INSTANCE</value>
-                </constructor-arg>
-        </bean>
+              factory-bean="serviceFactory"
+              factory-method="createStudentService"
+        />
 
+        <bean id="tutorService"
+              factory-bean="serviceFactory"
+              factory-method="createTutorService"
+        />
 </beans>

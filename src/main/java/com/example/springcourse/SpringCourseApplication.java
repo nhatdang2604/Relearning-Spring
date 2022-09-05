@@ -2,7 +2,9 @@ package com.example.springcourse;
 
 import com.example.config.AppConfig;
 import com.example.service.IStudentService;
+import com.example.service.ITutorService;
 import com.example.service.StudentService;
+import com.example.service.TutorService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -36,5 +38,7 @@ public class SpringCourseApplication {
 
         IStudentService studentService = ctx.getBean(StudentService.class);
         System.out.println(studentService.getAll());
+        ITutorService tutorService = ctx.getBean(TutorService.class);
+        System.out.println(tutorService.getAll());
     }
 }
