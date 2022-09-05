@@ -10,5 +10,8 @@ import lombok.NoArgsConstructor;
 public class ServiceFactory {
 
     private static IStudentService studentService = StudentService.INSTANCE;
-    private static ITutorService tutorService = TutorService.INSTANCE;
+    private static ITutorService tutorService = new TutorService();
+
+    public IStudentService createStudentService() {return studentService;}
+    public ITutorService createTutorService() {return tutorService;}
 }
