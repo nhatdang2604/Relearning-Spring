@@ -4,8 +4,14 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
+        <!--Factory-->
+        <bean id="serviceFactory"
+                class="com.example.factory.ServiceFactory"/>
+
         <!--Services-->
-        <bean id="student-service" class="com.example.service.StudentService" factory-method="valueOf">
+        <bean id="studentService"
+              class="com.example.service.StudentService"
+              factory-method="valueOf">
                 <constructor-arg>
                         <value>INSTANCE</value>
                 </constructor-arg>
