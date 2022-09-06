@@ -48,5 +48,8 @@ public class SpringCourseApplication {
         //Usage of factory
         BeanFactory factory = new XmlBeanFactory(new ClassPathResource("services.xml"));
         System.out.println(factory.getType("studentService"));
+
+        //Test to prove that the the Bean is signleton
+        System.out.println(ctx.getBean(TutorService.class) == ctx.getBean("tutorService"));
     }
 }
