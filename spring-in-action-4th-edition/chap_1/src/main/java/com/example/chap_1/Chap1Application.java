@@ -1,13 +1,18 @@
 package com.example.chap_1;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.example.knight.Knight;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-@SpringBootApplication
 public class Chap1Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Chap1Application.class, args);
+
+        ApplicationContext ctx =
+                new ClassPathXmlApplicationContext("knights.xml");
+
+        Knight knight = ctx.getBean(Knight.class);
+        knight.embarkOnQuest();
     }
 
 }
