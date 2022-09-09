@@ -1,6 +1,8 @@
 package com.example.springcourse;
 
 import com.example.config.AppConfig;
+import com.example.config.KnightConfig;
+import com.example.knight.Knight;
 import com.example.service.IStudentService;
 import com.example.service.ITutorService;
 import com.example.service.StudentService;
@@ -36,20 +38,27 @@ public class SpringCourseApplication {
 //        System.out.println(studentService.getAll());
 
         //3rd approach: xml config
-        ApplicationContext ctx =
-                new ClassPathXmlApplicationContext("services.xml");
+//        ApplicationContext ctx =
+//                new ClassPathXmlApplicationContext("services.xml");
+//
+//
+//        IStudentService studentService = ctx.getBean(StudentService.class);
+//        System.out.println(studentService.getAll());
+//        ITutorService tutorService = ctx.getBean(TutorService.class);
+//        System.out.println(tutorService.getAll());
+//
+//        //Usage of factory
+//        BeanFactory factory = new XmlBeanFactory(new ClassPathResource("services.xml"));
+//        System.out.println(factory.getType("studentService"));
+//
+//        //Test to prove that the the Bean is signleton
+//        System.out.println(ctx.getBean(TutorService.class) == ctx.getBean("tutorService"));
 
+        //Starting learn from the book "Spring in Action 4th edition"
+            ApplicationContext ctx =
+                    new AnnotationConfigApplicationContext(KnightConfig.class);
 
-        IStudentService studentService = ctx.getBean(StudentService.class);
-        System.out.println(studentService.getAll());
-        ITutorService tutorService = ctx.getBean(TutorService.class);
-        System.out.println(tutorService.getAll());
-
-        //Usage of factory
-        BeanFactory factory = new XmlBeanFactory(new ClassPathResource("services.xml"));
-        System.out.println(factory.getType("studentService"));
-
-        //Test to prove that the the Bean is signleton
-        System.out.println(ctx.getBean(TutorService.class) == ctx.getBean("tutorService"));
+            Knight knight = ctx.getBean(Knight.class);
+            knight.embarkOnQuest();
     }
 }
