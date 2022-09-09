@@ -7,9 +7,12 @@ import lombok.AllArgsConstructor;
 public class BraveKnight implements Knight {
 
     private Quest quest;
+    private Minstrel minstrel;
 
     @Override
     public void embarkOnQuest() {
+        minstrel.singBeforeQuest();
         quest.embark();
+        minstrel.singAfterQuest();
     }
 }
