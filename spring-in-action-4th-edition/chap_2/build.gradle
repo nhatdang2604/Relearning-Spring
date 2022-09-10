@@ -21,6 +21,7 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     testImplementation 'org.springframework:spring-test:5.3.22'
+    testImplementation 'com.github.stefanbirkner:system-rules:1.5.0'
 //    implementation 'org.springframework:spring-context:${springVersion}'
     implementation 'junit:junit:4.13.2'
     compileOnly 'org.projectlombok:lombok'

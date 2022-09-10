@@ -5,8 +5,9 @@ import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+
 @NoArgsConstructor
+@Component
 public class CDPlayer implements MediaPlayer {
 
     private CompactDisc cd;
@@ -18,6 +19,6 @@ public class CDPlayer implements MediaPlayer {
 
     @Override
     public void play() {
-
+        cd.play();
     }
 }
