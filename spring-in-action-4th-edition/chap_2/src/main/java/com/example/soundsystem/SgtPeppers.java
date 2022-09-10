@@ -2,9 +2,11 @@ package com.example.soundsystem;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.stereotype.Component;
 
 @Getter
 @Setter
+@Component
 public class SgtPeppers implements CompactDisc {
 
     private String title = "Sgt. Pepper's Lonely Hearts Club Band";
