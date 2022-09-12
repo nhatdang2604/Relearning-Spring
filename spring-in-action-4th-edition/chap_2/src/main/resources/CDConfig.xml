@@ -89,9 +89,9 @@
 <!--        </bean>-->
 
         <!--p-namespace style-->
-        <bean id="cdPlayer" class="com.example.soundsystem.CDPlayer"
-                p:compactDisc-ref="compactDisc"
-        />
+<!--        <bean id="cdPlayer" class="com.example.soundsystem.CDPlayer"-->
+<!--                p:compactDisc-ref="compactDisc"-->
+<!--        />-->
 
 
 </beans>
