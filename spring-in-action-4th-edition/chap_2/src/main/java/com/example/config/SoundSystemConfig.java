@@ -11,5 +11,4 @@ import org.springframework.context.annotation.ImportResource;
 @Import({CDPlayerConfig.class})
 @ImportResource("classpath:CDConfig.xml")
 public class SoundSystemConfig {
-
 }
