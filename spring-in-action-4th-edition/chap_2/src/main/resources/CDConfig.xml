@@ -12,16 +12,23 @@
         <context:component-scan base-package="com.example.soundsystem"/>
 
         <!--regular style-->
-<!--        <bean id="compactDisc" class="com.example.soundsystem.BlankDisc">-->
-<!--                <constructor-arg value="Sgt. Pepper's Lonely Hearts Club Band"/>-->
-<!--                <constructor-arg value="The Beatles"/>-->
-<!--        </bean>-->
+        <bean id="compactDisc" class="com.example.soundsystem.BlankDisc">
+                <constructor-arg value="Sgt. Pepper's Lonely Hearts Club Band"/>
+                <constructor-arg value="The Beatles"/>
+                <constructor-arg>
+                        <list>
+                                <value>Sgt. Pepper's Lonely Hearts Club Band</value>
+                                <value>With a Little Help from Mr Friends</value>
+                                <value>You gonna carry that weight</value>
+                        </list>
+                </constructor-arg>
+        </bean>
 
         <!--c:namespace style-->
-        <bean id="compactDisc"
-                class="com.example.soundsystem.BlankDisc"
-                c:_0="Sgt. Pepper's Lonely Hearts Club Band"
-                c:_1="The Beatles"/>
+<!--        <bean id="compactDisc"-->
+<!--                class="com.example.soundsystem.BlankDisc"-->
+<!--                c:_0="Sgt. Pepper's Lonely Hearts Club Band"-->
+<!--                c:_1="The Beatles"/>-->
 
         <!--Regular declaration-->
 <!--        <bean id="cdPlayer" class="com.example.soundsystem.CDPlayer">-->
