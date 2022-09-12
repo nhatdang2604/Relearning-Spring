@@ -1,6 +1,7 @@
 package com.example.soundsystem;
 
 import com.example.config.CDPlayerConfig;
+import com.example.config.SoundSystemConfig;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.StandardOutputStreamLog;
@@ -14,9 +15,10 @@ import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 //@ContextConfiguration(classes= CDPlayerConfig.class)
-@ContextConfiguration(
-        locations = {"file:src/main/resources/CDConfig.xml"}
-)
+//@ContextConfiguration(
+//        locations = {"file:src/main/resources/CDConfig.xml"}
+//)
+@ContextConfiguration(classes = SoundSystemConfig.class)
 public class CDPlayerTest {
 
     @Rule

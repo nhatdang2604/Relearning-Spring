@@ -7,16 +7,18 @@ import com.example.soundsystem.SgtPeppers;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
 @Configuration
+//@Import(CDConfig.class)
 //@ComponentScan(basePackages = {"com.example.soundsystem"})
 //@ComponentScan(basePackages = "com.example.soundsystem")  //for implicit wiring
 public class CDPlayerConfig {
 
-    @Bean(name="lonelyHeartsClubBand")
-    public CompactDisc sgtPeppers() {
-        return new SgtPeppers();
-    }
+//    @Bean(name="lonelyHeartsClubBand")
+//    public CompactDisc sgtPeppers() {
+//        return new SgtPeppers();
+//    }
 
     //1st approach
 //    @Bean
@@ -26,10 +28,10 @@ public class CDPlayerConfig {
 
     //2nd approach
     @Bean
-    public MediaPlayer cdPlayer(CompactDisc disc) {
+    public MediaPlayer cdPlayer(CompactDisc compactDisc) {
 
         CDPlayer player = new CDPlayer();
-        player.setCompactDisc(disc);
+        player.setCompactDisc(compactDisc);
 
         return player;
     }
