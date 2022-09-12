@@ -32,9 +32,22 @@
 <!--                c:_1="The Beatles"/>-->
 
         <!--regular style, setter based-->
-        <bean id="compactDisc" class="com.example.soundsystem.BlankDisc">
-                <property name="title" value="Sgt. Pepper's Lonely Hearts Club Band"/>
-                <property name="artist" value="The Beatles"/>
+<!--        <bean id="compactDisc" class="com.example.soundsystem.BlankDisc">-->
+<!--                <property name="title" value="Sgt. Pepper's Lonely Hearts Club Band"/>-->
+<!--                <property name="artist" value="The Beatles"/>-->
+<!--                <property name="tracks">-->
+<!--                        <list>-->
+<!--                                <value>Sgt. Pepper's Lonely Hearts Club Band</value>-->
+<!--                                <value>With a Little Help from Mr Friends</value>-->
+<!--                                <value>You gonna carry that weight</value>-->
+<!--                        </list>-->
+<!--                </property>-->
+<!--        </bean>-->
+
+        <!-- p-namespace style -->
+        <bean id="compactDisc" class="com.example.soundsystem.BlankDisc"
+                p:title="Sgt. Pepper's Lonely Hearts Club Band"
+                p:artist="The Beatles">
                 <property name="tracks">
                         <list>
                                 <value>Sgt. Pepper's Lonely Hearts Club Band</value>
