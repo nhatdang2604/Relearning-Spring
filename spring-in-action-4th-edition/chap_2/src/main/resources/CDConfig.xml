@@ -36,9 +36,12 @@
 <!--        </bean>-->
 
         <!--c-namespace declaration-->
-        <bean id="cdPlayer" class="com.example.soundsystem.CDPlayer"
-                c:_0-ref="compactDisc"
-        />
+<!--        <bean id="cdPlayer" class="com.example.soundsystem.CDPlayer"-->
+<!--                c:_0-ref="compactDisc"-->
+<!--        />-->
 
+        <bean id="cdPlayer" class="com.example.soundsystem.CDPlayer">
+                <property name="compactDisc" ref="compactDisc"/>
+        </bean>
 
 </beans>
