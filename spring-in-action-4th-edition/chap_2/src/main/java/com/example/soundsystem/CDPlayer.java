@@ -13,8 +13,8 @@ public class CDPlayer implements MediaPlayer {
     private CompactDisc compactDisc;
 
 //    @Autowired
-//    public CDPlayer(CompactDisc cd) {
-//        this.cd = cd;
+//    public CDPlayer(CompactDisc compactDisc) {
+//        this.compactDisc = compactDisc;
 //    }
 
     @Autowired
@@ -24,6 +24,6 @@ public class CDPlayer implements MediaPlayer {
 
     @Override
     public void play() {
-        cd.play();
+        compactDisc.play();
     }
 }
