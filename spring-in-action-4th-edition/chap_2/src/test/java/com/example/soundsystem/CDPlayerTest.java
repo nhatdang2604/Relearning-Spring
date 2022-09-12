@@ -18,7 +18,10 @@ import static org.junit.Assert.assertNotNull;
 //@ContextConfiguration(
 //        locations = {"file:src/main/resources/CDConfig.xml"}
 //)
-@ContextConfiguration(classes = SoundSystemConfig.class)
+@ContextConfiguration(
+        locations = {"file:src/main/resources/CDConfig_0.xml"}
+)
+//@ContextConfiguration(classes = SoundSystemConfig.class)
 public class CDPlayerTest {
 
     @Rule
