@@ -5,7 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-        <import resource="CDConfig.xml"/>
+<!--        <import resource="CDConfig.xml"/>-->
+
+        <bean class="com.example.config.CDConfig"/>
 
         <bean id="cdPlayer"
                 class="com.example.soundsystem.CDPlayer"
