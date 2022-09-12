@@ -13,7 +13,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes= CDPlayerConfig.class)
+//@ContextConfiguration(classes= CDPlayerConfig.class)
+@ContextConfiguration(
+        locations = {"file:src/main/resources/CDConfig.xml"}
+)
 public class CDPlayerTest {
 
     @Rule

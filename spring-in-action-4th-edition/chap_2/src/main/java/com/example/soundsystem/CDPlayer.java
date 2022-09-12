@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 
 @NoArgsConstructor
-@Component
+//@Component
 public class CDPlayer implements MediaPlayer {
 
     private CompactDisc cd;
