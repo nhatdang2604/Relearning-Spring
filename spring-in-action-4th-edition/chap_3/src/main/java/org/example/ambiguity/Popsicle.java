@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 //@Primary
-@Qualifier("cold")
+@Cold
 public class Popsicle implements Dessert {
 
     @Override
