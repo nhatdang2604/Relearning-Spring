@@ -1,5 +1,5 @@
-import org.example.exclude.MagicBean;
-import org.example.config.BeanConfig;
+import org.example.ambiguity.Dish;
+import org.example.config.AmbiguityConfig;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,15 +8,15 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = BeanConfig.class)
-public class AppTest {
+@ContextConfiguration(classes = AmbiguityConfig.class)
+public class AmbiguityTest {
 
     @Autowired
-    private MagicBean magicBean;
+    private Dish dish;
 
     @Test
-    public void magicBeanIsNotNull() {
-        Assert.assertNotNull(magicBean);
+    public void dessertIsNotNull() {
+        Assert.assertNotNull(dish.getDessert());
     }
 
 }
