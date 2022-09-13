@@ -8,12 +8,12 @@ version '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
-//
-//configurations {
-//    compileOnly {
-//        extendsFrom annotationProcessor
-//    }
-//}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
 
 dependencies {
 //    implementation 'org.springframework:spring-core:5.3.22'
@@ -21,11 +21,12 @@ dependencies {
     implementation 'org.projectlombok:lombok:1.18.24'
     implementation 'org.springframework:spring-context:5.3.22'
     testImplementation 'org.springframework:spring-test:5.3.22'
+    implementation 'junit:junit:4.13.1'
 //    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1
-//    compileOnly 'org.projectlombok:lombok'
-//    annotationProcessor 'org.projectlombok:lombok'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
 
-test {
-    useJUnitPlatform()
-}
+//test {
+//    useJUnitPlatform()
+//}
