@@ -1,4 +1,4 @@
-package org.example;
+package org.example.exclude;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
