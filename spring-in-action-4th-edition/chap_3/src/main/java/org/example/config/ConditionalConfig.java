@@ -1,5 +1,5 @@
 package org.example.config;
-import org.example.exclude.MagicBean;
+import org.example.condition.MagicBean;
 import org.example.condition.MagicExistsCondition;
 import org.springframework.context.annotation.*;
 
