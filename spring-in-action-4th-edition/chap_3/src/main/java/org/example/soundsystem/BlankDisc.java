@@ -20,6 +20,11 @@ public class BlankDisc implements CompactDisc {
     @Override
     public void play() {
         System.out.println("Playing " + title +  " by " + artist);
+
+        if (null == tracks) {
+            return;
+        }
+
         tracks.forEach(track -> {
            System.out.println("- Track: " + track);
         });
