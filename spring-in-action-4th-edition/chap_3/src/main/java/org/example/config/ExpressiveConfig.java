@@ -17,8 +17,8 @@ public class ExpressiveConfig {
     @Bean
     public BlankDisc blankDisc() {
         BlankDisc disc = new BlankDisc();
-        disc.setTitle(env.getProperty("disc.title"));
-        disc.setArtist(env.getProperty("disc.artist"));
+        disc.setTitle(env.getProperty("disc.title", "Rattle and Hum"));
+        disc.setArtist(env.getProperty("disc.artist", "U2"));
 
         return disc;
     }
