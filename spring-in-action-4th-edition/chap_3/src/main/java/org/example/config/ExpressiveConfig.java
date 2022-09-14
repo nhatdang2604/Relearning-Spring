@@ -24,12 +24,12 @@ public class ExpressiveConfig {
     @Bean
     public BlankDisc blankDisc(
             @Value("${disc.title}") String title,
-            @Value("${disc.artist}") String artist) {
-        BlankDisc disc = new BlankDisc(title, artist, null);
+            @Value("${disc.artist}}") String artist) {
+        BlankDisc buffer = new BlankDisc(title, artist, null);
 
-//        disc.setTitle(env.getProperty("disc.title", "Rattle and Hum"));
-//        disc.setArtist(env.getProperty("disc.artist", "U2"));
+//        buffer.setTitle(env.getProperty("disc.title", "Rattle and Hum"));
+//        buffer.setArtist(env.getProperty("disc.artist", "U2"));
 
-        return disc;
+        return buffer;
     }
 }
