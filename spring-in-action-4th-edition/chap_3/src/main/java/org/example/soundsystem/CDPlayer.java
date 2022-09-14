@@ -1,4 +1,4 @@
-package com.example.soundsystem;
+package org.example.soundsystem;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
