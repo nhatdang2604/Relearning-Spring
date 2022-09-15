@@ -12,6 +12,7 @@
 
         <context:component-scan base-package="org.example"/>
 
+        <!--Enable the Aspectj auto-proxing, for using AOP-->
         <aop:aspectj-autoproxy/>
 
         <bean class="org.example.concert.Audience"/>
