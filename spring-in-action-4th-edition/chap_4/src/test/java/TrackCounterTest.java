@@ -31,6 +31,7 @@ public class TrackCounterTest {
         cd.playTrack(3);
         cd.playTrack(3);
         cd.playTrack(3);
+        cd.playTrack(3);
         cd.playTrack(7);
         cd.playTrack(7);
 
