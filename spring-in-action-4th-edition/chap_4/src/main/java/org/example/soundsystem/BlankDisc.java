@@ -38,6 +38,9 @@ public class BlankDisc implements CompactDisc {
 
     @Override
     public void playTrack(int trackNumber) {
+        if (trackNumber < 0 || trackNumber >= tracks.size()) {
+            return;
+        }
         System.out.println("- Track: " + tracks.get(trackNumber));
     }
 }
