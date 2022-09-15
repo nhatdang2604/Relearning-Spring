@@ -1,7 +1,9 @@
 package org.example.concert;
 
+import lombok.NoArgsConstructor;
 import org.aspectj.lang.annotation.*;
 
+@NoArgsConstructor
 @Aspect
 public class Audience {
 
