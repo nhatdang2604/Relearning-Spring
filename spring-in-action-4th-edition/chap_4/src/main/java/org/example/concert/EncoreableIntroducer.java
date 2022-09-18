@@ -1,9 +1,11 @@
 package org.example.concert;
 
+import lombok.NoArgsConstructor;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.DeclareParents;
 
 @Aspect
+@NoArgsConstructor
 public class EncoreableIntroducer {
 
     @DeclareParents(
@@ -13,4 +15,3 @@ public class EncoreableIntroducer {
     public static Encoreable encoreable;
 
 }
-class
