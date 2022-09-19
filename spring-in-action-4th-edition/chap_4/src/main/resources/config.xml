@@ -25,22 +25,25 @@
                                 id="performance"
                                 expression="execution(* org.example.concert.MetalPerformance.perform())"/>
 
-                        <aop:before
-                                pointcut-ref="performance"
-                                method="silenceCellPhones"/>
+<!--                        <aop:before-->
+<!--                                pointcut-ref="performance"-->
+<!--                                method="silenceCellPhones"/>-->
 
-                        <aop:before
-                                pointcut-ref="performance"
-                                method="takeSeats"/>
+<!--                        <aop:before-->
+<!--                                pointcut-ref="performance"-->
+<!--                                method="takeSeats"/>-->
 
-                        <aop:after-returning
-                                pointcut-ref="performance"
-                                method="applause"/>
+<!--                        <aop:after-returning-->
+<!--                                pointcut-ref="performance"-->
+<!--                                method="applause"/>-->
 
-                        <aop:after-throwing
-                                pointcut-ref="performance"
-                                method="demandRefund"/>
+<!--                        <aop:after-throwing-->
+<!--                                pointcut-ref="performance"-->
+<!--                                method="demandRefund"/>-->
 
+                        <aop:around
+                                pointcut-ref="performance"
+                                method="watchPerformance"/>
                 </aop:aspect>
         </aop:config>
 </beans>
