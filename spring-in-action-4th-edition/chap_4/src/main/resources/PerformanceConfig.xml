@@ -45,5 +45,12 @@
                                 pointcut-ref="performance"
                                 method="watchPerformance"/>
                 </aop:aspect>
+
+                <aop:aspect>
+                        <aop:declare-parents
+                                types-matching="org.example.concert.Performance+"
+                                implement-interface="org.example.concert.Encoreable"
+                                default-impl="org.example.concert.DefaultEncoreable"/>
+                </aop:aspect>
         </aop:config>
 </beans>
