@@ -15,6 +15,27 @@
         <!--Enable the Aspectj auto-proxing, for using AOP-->
         <aop:aspectj-autoproxy/>
 
-        <bean class="org.example.concert.Audience"/>
+        <bean id="xmlAudience" class="org.example.concert.XmlAudience"/>
 
+        <aop:config>
+                <aop:aspect ref="xmlAudience">
+
+                        <aop:before
+                                pointcut="execution(* org.example.concert.Performance.perform())"
+                                method="silenceCellPhones"/>
+
+                        <aop:before
+                                pointcut="execution(* org.example.concert.Performance.perform())"
+                                method="takeSeats"/>
+
+                        <aop:after-returning
+                                pointcut="execution(* org.example.concert.Performance.perform())"
+                                method="applause"/>
+
+                        <aop:after-throwing
+                                pointcut="execution(* org.example.concert.Performance.perform())"
+                                method="demandRefund"/>
+
+                </aop:aspect>
+        </aop:config>
 </beans>
