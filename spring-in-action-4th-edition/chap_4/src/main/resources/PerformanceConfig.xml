@@ -17,7 +17,7 @@
 
         <bean id="xmlAudience" class="org.example.concert.XmlAudience"/>
         <bean id="metalPerformance" class="org.example.concert.MetalPerformance"/>
-
+        <bean id="encoreableDelegate" class="org.example.concert.DefaultEncoreable"/>
         <aop:config>
                 <aop:aspect ref="xmlAudience">
 
@@ -50,7 +50,7 @@
                         <aop:declare-parents
                                 types-matching="org.example.concert.Performance+"
                                 implement-interface="org.example.concert.Encoreable"
-                                default-impl="org.example.concert.DefaultEncoreable"/>
+                                delegate-ref="encoreableDelegate"/>
                 </aop:aspect>
         </aop:config>
 </beans>
