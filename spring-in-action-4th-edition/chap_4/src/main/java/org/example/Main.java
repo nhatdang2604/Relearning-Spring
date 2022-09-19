@@ -11,12 +11,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
     public static void main(String[] args) {
 
+        //Testing for concert package
         ApplicationContext ctx = new ClassPathXmlApplicationContext("PerformanceConfig.xml");
         Performance performance = (Performance) ctx.getBean("metalPerformance");
         performance.perform();
         Encoreable encoreable = (Encoreable) performance;
         encoreable.performEncore();
 
+        //Testing for soundsystem package
 //        ApplicationContext ctx = new ClassPathXmlApplicationContext("SoundSystemConfig.xml");
 //        CompactDisc cd = ctx.getBean(CompactDisc.class);
 //        XmlTrackCounter counter = (XmlTrackCounter) ctx.getBean("xmlTrackCounter");
