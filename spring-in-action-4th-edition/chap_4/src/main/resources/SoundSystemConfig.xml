@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--        <context:component-scan base-package="org.example"/>-->
+
+        <!--Enable the Aspectj auto-proxing, for using AOP-->
+        <aop:aspectj-autoproxy/>
+
+        <bean id="xmlTrackCounter"
+              class="org.example.soundsystem.XmlTrackCounter"/>
+
+        <bean id="cd"
+              class="org.example.soundsystem.BlankDisc">
+                <property name="title"
+                          value="Sgt. Pepper's Lonely Hearts Club Band"/>
+                <property name="artist"
+                          value="The Beatles"/>
+                <property name="tracks">
+                        <list>
+                                <value>Sgt. Pepper's Lonely Hearts Club Band</value>
+                                <value>Jet to Jet</value>
+                                <value>Dream On</value>
+                        </list>
+                </property>
+        </bean>
+
+        <aop:config>
+                <aop:aspect ref="xmlTrackCounter">
+                        <aop:pointcut id="trackedPlayed"
+                                      expression="execution(* org.example.soundsystem.CompactDisc.playTrack(int)) and args(trackNumber)"/>
+                        <aop:before
+                                pointcut-ref="trackedPlayed"
+                                method="countTrack"/>
+                </aop:aspect>
+        </aop:config>
+
+
+</beans>
