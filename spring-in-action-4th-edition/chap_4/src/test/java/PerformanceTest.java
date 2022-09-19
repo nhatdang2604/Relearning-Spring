@@ -14,7 +14,6 @@ public class PerformanceTest {
 
     @Test
     public void performanceTest() {
-        Assert.
         performance.perform();
     }
 }
