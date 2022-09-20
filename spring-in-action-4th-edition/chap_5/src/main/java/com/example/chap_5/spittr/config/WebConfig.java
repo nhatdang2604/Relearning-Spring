@@ -7,14 +7,17 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
 @PropertySource(value="classpath:application.properties")
 @ComponentScan(basePackages="com.example.chap_5.spittr.web")
-public class WebConfig {
+public class WebConfig implements WebMvcConfigurer {
 
     @Autowired
     private Environment env;
@@ -35,5 +38,11 @@ public class WebConfig {
         resolver.setExposeContextBeansAsAttributes(true);
 
         return resolver;
+    }
+    @Override
+    public void configureDefaultServletHandling(
+            DefaultServletHandlerConfigurer configurer) {
+        
+        configurer.enable();
     }
 }
