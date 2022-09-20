@@ -23,6 +23,7 @@
     <maven.compiler.target>8</maven.compiler.target>
 
     <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
+    <jstl.version>1.2</jstl.version>
 
   </properties>
 
@@ -87,6 +88,12 @@
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>${javax.servlet-api.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>${jstl.version}</version>
     </dependency>
 
   </dependencies>
