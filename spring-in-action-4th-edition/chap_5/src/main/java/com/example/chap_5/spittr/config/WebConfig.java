@@ -39,6 +39,7 @@ public class WebConfig implements WebMvcConfigurer {
 
         return resolver;
     }
+
     @Override
     public void configureDefaultServletHandling(
             DefaultServletHandlerConfigurer configurer) {
