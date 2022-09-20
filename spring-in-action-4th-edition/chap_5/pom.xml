@@ -25,6 +25,9 @@
     <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
     <jstl.version>1.2</jstl.version>
 
+    <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -100,6 +103,20 @@
 
   <build>
     <finalName>chap_5</finalName>
+
+<!--    <plugins>-->
+
+<!--      &lt;!&ndash; Builds a Web Application Archive (WAR) file from the project output-->
+<!--          and its dependencies. &ndash;&gt;-->
+<!--&lt;!&ndash;      <plugin>&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; Add Maven coordinates (GAV) for: maven-war-plugin &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <groupId>org.apache.maven.plugins</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;        <artifactId>maven-war-plugin</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;        <version>${maven-war-plugin.version}</version>&ndash;&gt;-->
+<!--&lt;!&ndash;      </plugin>&ndash;&gt;-->
+
+<!--    </plugins>-->
+
   </build>
 
 </project>

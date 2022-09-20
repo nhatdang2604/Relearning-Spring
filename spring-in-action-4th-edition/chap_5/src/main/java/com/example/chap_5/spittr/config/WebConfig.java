@@ -15,9 +15,9 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@PropertySource(value="classpath:application.properties")
 @ComponentScan(basePackages="com.example.chap_5.spittr.web")
-public class WebConfig implements WebMvcConfigurer {
+@PropertySource(value="classpath:application.properties")
+public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Autowired
     private Environment env;
