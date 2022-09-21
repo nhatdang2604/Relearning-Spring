@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
+@PropertySource("classpath:application.properties")
 public class HomeController {
 
     @RequestMapping(value="${path.home}", method=RequestMethod.GET)

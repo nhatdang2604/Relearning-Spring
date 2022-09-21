@@ -7,7 +7,6 @@ public class SpittrWebInitializer
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class<?>[] {RootConfig.class};
-//        return null;
     }
 
     @Override
