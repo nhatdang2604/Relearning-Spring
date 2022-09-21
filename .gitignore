@@ -37,4 +37,4 @@ out/
 .vscode/
 
 ### Build ###
-**/target/**s
+**/target/**
