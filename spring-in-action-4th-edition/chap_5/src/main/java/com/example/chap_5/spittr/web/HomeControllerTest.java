@@ -3,7 +3,6 @@ package com.example.chap_5.spittr.web;
 import com.example.chap_5.spittr.config.RootConfig;
 import com.example.chap_5.spittr.config.WebConfig;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
@@ -29,7 +28,8 @@ public class HomeControllerTest {
 
         MockMvc mockMvc =
                 standaloneSetup(homeController)
-                        .addPlaceholderValue("path.home", "/")
+                        .addPlaceholderValue("path.home", "/homepage")
+                        .addPlaceholderValue("path.root", "/")
                         .build();
 
         mockMvc.perform(get("/"))
