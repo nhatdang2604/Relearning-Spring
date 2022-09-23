@@ -16,7 +16,7 @@ public class SpittleRepositoryImpl implements SpittleRepository {
 
     public SpittleRepositoryImpl() {
 
-        spittles = new LinkedList<>();
+        spittles = new ArrayList<>();
         mockData();
     }
 
@@ -37,5 +37,13 @@ public class SpittleRepositoryImpl implements SpittleRepository {
                 .collect(Collectors.toList());
 
         return buffer;
+    }
+
+    @Override
+    public Spittle findOne(long id) {
+        return spittles.stream()
+                .filter(spittle -> spittle.getId().equals(id))
+                .findAny()
+                .orElse(null);
     }
 }
