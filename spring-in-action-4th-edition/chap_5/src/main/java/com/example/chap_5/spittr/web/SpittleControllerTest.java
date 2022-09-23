@@ -31,10 +31,13 @@ class SpittleControllerTest {
     @Test
     public void shouldShowRecentSpittles() throws Exception {
 
+        long max = 238900;
+        int count = 50;
+
         List<Spittle> expectedSpittles = createSpittleList(20);
         SpittleRepository mockRepository = Mockito.mock(SpittleRepository.class);
 
-        Mockito.when(mockRepository.findSpittles(Long.MAX_VALUE,20))
+        Mockito.when(mockRepository.findSpittles(max, count))
                 .thenReturn(expectedSpittles);
 
         SpittleController controller = new SpittleController(mockRepository);
@@ -50,7 +53,7 @@ class SpittleControllerTest {
 
         String spittleListKey = "spittleList";
 
-        mockMvc.perform(MockMvcRequestBuilders.get(placeholders.get("path.spittles")))
+        mockMvc.perform(MockMvcRequestBuilders.get(placeholders.get("path.spittles") + "?max=" + max +"&count=" + count))
                 .andExpect(MockMvcResultMatchers.view().name("spittles"))
                 .andExpect(MockMvcResultMatchers.model().attributeExists(spittleListKey))
                 .andExpect(MockMvcResultMatchers.model().attribute(spittleListKey,
