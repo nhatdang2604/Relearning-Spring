@@ -55,4 +55,17 @@ public class SpittleController {
         return spittleRepository.findSpittles(max, count);
     }
 
+    @RequestMapping(value="${path.spittles.show}", method=RequestMethod.GET)
+    public String showSpittle(
+            @RequestParam("spittle-id") long spittleId,
+            Model model
+    ) {
+        Spittle spittle = spittleRepository.findOne(spittleId);
+        if (null == spittle) {
+            spittle = new Spittle();
+        }
+        model.addAttribute(spittle);
+
+        return "spittle";
+    }
 }
