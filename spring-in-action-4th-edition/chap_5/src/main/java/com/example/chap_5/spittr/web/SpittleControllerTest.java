@@ -28,6 +28,7 @@ class SpittleControllerTest {
         placeholders = new HashMap<>();
         placeholders.put("path.spittles", "/spittles");
         placeholders.put("path.spittles.show", "/show");
+        placeholders.put("param.spittle.id", "spittleId");
     }
 
     //Add the placeholder with <key, value>, to the MockMvcBuilder
@@ -93,7 +94,7 @@ class SpittleControllerTest {
         SpittleController spittleController = new SpittleController(mockRepository);
         MockMvc mockMvc = placeholderBuilder(spittleController).build();
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/spittles/show?spittle-id=" + spittleId))
+        mockMvc.perform(MockMvcRequestBuilders.get("/spittles/" + spittleId))
                 .andExpect(MockMvcResultMatchers.view().name("spittle"))
                 .andExpect(MockMvcResultMatchers.model().attributeExists("spittle"))
                 .andExpect(MockMvcResultMatchers.model().attribute("spittle", expectedSpittle));
