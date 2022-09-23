@@ -28,7 +28,6 @@ class SpittleControllerTest {
         placeholders = new HashMap<>();
         placeholders.put("path.spittles", "/spittles");
         placeholders.put("path.spittles.show", "/show");
-        placeholders.put("param.spittle.id", "spittleId");
     }
 
     //Add the placeholder with <key, value>, to the MockMvcBuilder
@@ -78,6 +77,26 @@ class SpittleControllerTest {
                 .andExpect(MockMvcResultMatchers.model().attribute(spittleListKey,
                         Matchers.hasItems(expectedSpittles.toArray())));
 
+    }
+
+    @Test
+    public void testShowSpittle() throws Exception {
+
+        long spittleId = 0;
+        Spittle expectedSpittle =
+                new Spittle(spittleId, "test " + spittleId, new Date(spittleId), new Double(spittleId), new Double(spittleId));
+
+        SpittleRepository mockRepository = Mockito.mock(SpittleRepository.class);
+        Mockito.when(mockRepository.findOne(0))
+                .thenReturn(expectedSpittle);
+
+        SpittleController spittleController = new SpittleController(mockRepository);
+        MockMvc mockMvc = placeholderBuilder(spittleController).build();
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/spittles/show?spittle-id=" + spittleId))
+                .andExpect(MockMvcResultMatchers.view().name("spittle"))
+                .andExpect(MockMvcResultMatchers.model().attributeExists("spittle"))
+                .andExpect(MockMvcResultMatchers.model().attribute("spittle", expectedSpittle));
     }
 
     @Test
