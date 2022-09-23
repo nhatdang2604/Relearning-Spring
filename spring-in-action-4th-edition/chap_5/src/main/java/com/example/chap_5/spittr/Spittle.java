@@ -9,6 +9,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @Getter
 @Setter
+@ToString
 public class Spittle {
 
     private Long id;

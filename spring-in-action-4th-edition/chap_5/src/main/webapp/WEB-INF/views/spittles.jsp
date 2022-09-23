@@ -5,16 +5,19 @@
   Time: 13:14
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page isELIgnored="false" %>
+<!DOCTYPE html>
 
 <html>
 <head>
     <title>Spittles</title>
 </head>
 <body>
-    <c:forEach items="${spittleList}" var="spittle">
-        <li id="spittle_<c:out value="spittle.id"/>">
+    <c:forEach var="spittle" items="${spittleList}">
+        <li id="spittle_<c:out value="${spittle.id}"/>">
 
             <div class="spittleMessage">
                 <c:out value="${spittle.message}"/>
