@@ -5,6 +5,8 @@ import com.example.chap_5.spittr.data.SpitterRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @AllArgsConstructor
 public class SpitterController {
 
+    private static final String PARAM_SPITTER_USERNAME = "username";
     @Value("${path.spitter}")
     private final String ROOT;
 
@@ -29,6 +32,17 @@ public class SpitterController {
         spitterRepository.save(spitter);
 
         return "redirect:" + ROOT + "/" + spitter.getUsername();
+    }
+
+@RequestMapping(value="/{" + PARAM_SPITTER_USERNAME + "}", method=RequestMethod.GET)
+    public String showSpitterProfile(
+            @PathVariable(PARAM_SPITTER_USERNAME) String username,
+            Model model
+    ) {
+        Spitter spitter = spitterRepository.findByUsername(username);
+        model.addAttribute(spitter);
+
+        return "profile";
     }
 
 }
