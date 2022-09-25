@@ -26,4 +26,20 @@ public class SpitterRepositoryImpl implements SpitterRepository {
         spitter.setId(id);
         spitters.put(id, spitter);
     }
+
+    @Override
+    public Spitter findByUsername(String username) {
+
+        //Filtering by username + get the first entry
+        Map.Entry<Long, Spitter> e = spitters
+                .entrySet()
+                .stream()
+                .filter(entry -> entry.getValue().getUsername().equals(username))
+                .findFirst()
+                .orElse(null);
+
+        //Return the spitter, if the entry which have the spitter having the same username existed,
+        //  or else, return null
+        return (null != e?e.getValue():null);
+    }
 }
