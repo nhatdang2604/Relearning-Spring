@@ -27,7 +27,6 @@ public class SpitterController {
         this.spitterRepository = spitterRepository;
     }
 
-
     @RequestMapping(value="${path.spitter.register}", method=RequestMethod.GET)
     public String showRegistrationForm() {
         return "registerForm";

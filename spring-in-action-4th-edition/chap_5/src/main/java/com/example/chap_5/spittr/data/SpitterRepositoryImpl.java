@@ -21,10 +21,12 @@ public class SpitterRepositoryImpl implements SpitterRepository {
     }
 
     @Override
-    public void save(Spitter spitter) {
+    public Spitter save(Spitter spitter) {
         Long id = getNextAvailableId();
         spitter.setId(id);
         spitters.put(id, spitter);
+
+        return spitter;
     }
 
     @Override
