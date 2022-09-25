@@ -31,6 +31,8 @@
     <jsp-api.version>2.0</jsp-api.version>
     <javax.el-api>3.0.0</javax.el-api>
 
+    <javax-validation-api.version>2.0.1.Final</javax-validation-api.version>
+
     <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -154,17 +156,25 @@
       <version>RELEASE</version>
       <scope>compile</scope>
     </dependency>
+
       <dependency>
           <groupId>junit</groupId>
           <artifactId>junit</artifactId>
           <version>3.8.1</version>
           <scope>compile</scope>
       </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>RELEASE</version>
       <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+      <version>${javax-validation-api.version}</version>
     </dependency>
 
   </dependencies>
