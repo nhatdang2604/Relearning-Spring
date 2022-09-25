@@ -25,6 +25,7 @@ public class SpitterController {
     private String ROOT;
 
     private SpitterRepository spitterRepository;
+    
     @Autowired
     public SpitterController(SpitterRepository spitterRepository) {
         this.spitterRepository = spitterRepository;
