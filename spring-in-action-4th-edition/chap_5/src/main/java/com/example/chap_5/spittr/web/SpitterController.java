@@ -3,6 +3,8 @@ package com.example.chap_5.spittr.web;
 import com.example.chap_5.spittr.Spitter;
 import com.example.chap_5.spittr.data.SpitterRepository;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,14 +14,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("${path.spitter}")
-@AllArgsConstructor
+@NoArgsConstructor
 public class SpitterController {
 
     private static final String PARAM_SPITTER_USERNAME = "username";
     @Value("${path.spitter}")
-    private final String ROOT;
+    private String ROOT;
 
     private SpitterRepository spitterRepository;
+    @Autowired
+    public SpitterController(SpitterRepository spitterRepository) {
+        this.spitterRepository = spitterRepository;
+    }
+
 
     @RequestMapping(value="${path.spitter.register}", method=RequestMethod.GET)
     public String showRegistrationForm() {
@@ -34,7 +41,7 @@ public class SpitterController {
         return "redirect:" + ROOT + "/" + spitter.getUsername();
     }
 
-@RequestMapping(value="/{" + PARAM_SPITTER_USERNAME + "}", method=RequestMethod.GET)
+    @RequestMapping(value="/{" + PARAM_SPITTER_USERNAME + "}", method=RequestMethod.GET)
     public String showSpitterProfile(
             @PathVariable(PARAM_SPITTER_USERNAME) String username,
             Model model
