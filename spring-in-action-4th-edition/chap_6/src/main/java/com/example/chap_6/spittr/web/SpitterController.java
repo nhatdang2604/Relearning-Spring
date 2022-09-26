@@ -31,7 +31,7 @@ public class SpitterController {
     }
 
     @RequestMapping(value="${path.spitter.register}", method=RequestMethod.GET)
-    public String showRegistrationForm() {
+    public String showRegistrationForm(Spitter spitter) {
         return "registerForm";
     }
 

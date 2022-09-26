@@ -15,7 +15,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages={"com.example.chap_5.spittr.web", "com.example.chap_5.spittr.data"})
+@ComponentScan(basePackages={"com.example.chap_6.spittr.web", "com.example.chap_6.spittr.data"})
 @PropertySource(value="classpath:application.properties")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
