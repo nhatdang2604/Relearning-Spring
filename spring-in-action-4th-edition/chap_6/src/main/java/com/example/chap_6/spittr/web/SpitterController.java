@@ -1,8 +1,7 @@
-package com.example.chap_5.spittr.web;
+package com.example.chap_6.spittr.web;
 
-import com.example.chap_5.spittr.Spitter;
-import com.example.chap_5.spittr.data.SpitterRepository;
-import lombok.AllArgsConstructor;
+import com.example.chap_6.spittr.Spitter;
+import com.example.chap_6.spittr.data.SpitterRepository;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
