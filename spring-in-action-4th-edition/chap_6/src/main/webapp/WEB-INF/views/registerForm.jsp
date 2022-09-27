@@ -27,17 +27,24 @@
 <%--    </form>--%>
 
     <sf:form method="POST" modelAttribute="spitter">
-        First name: <sf:input path="firstName"/>
-        <sf:errors path="firstName" cssClass="error"/><br/>
 
-        Last name: <sf:input path="lastName"/>
-         <sf:errors path="lastName" cssClass="error"/><br/>
+        <sf:errors path="*" element="div" cssClass="errors"/>
 
-        Username: <sf:input path="username"/>
-        <sf:errors path="username" cssClass="error"/><br/>
+        <sf:label path="firstName"
+                  cssErrorClass="error">First name</sf:label>:
+        <sf:input path="firstName" cssErrorClass="error"/><br/>
 
-        Password: <sf:password path="password"/>
-        <sf:errors path="password" cssClass="error"/><br/>
+        <sf:label path="lastName"
+                  cssErrorClass="error">Last name</sf:label>:
+        <sf:input path="lastName" cssErrorClass="error"/><br/>
+
+        <sf:label path="username"
+                  cssErrorClass="error">Username</sf:label>:
+        <sf:input path="username" cssErrorClass="error"/><br/>
+
+        <sf:label path="password"
+                  cssErrorClass="error">First name</sf:label>:
+        <sf:input path="password" cssErrorClass="error"/><br/>
 
         <input type="submit" value="Register"/>
     </sf:form>
