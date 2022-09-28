@@ -53,10 +53,15 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Bean
     public MessageSource messageSource() {
-        ResourceBundleMessageSource messageSource =
-                new ResourceBundleMessageSource();
 
-        messageSource.setBasename("messages");
+        //ReloadableResourceBundleMessageSource has the ability
+        //  to lreload message properties without recompiling or
+        //  restart the application, compare to ResourceBundleMessageSource
+        ReloadableResourceBundleMessageSource messageSource =
+                new ReloadableResourceBundleMessageSource();
+
+        messageSource.setBasename("classpath:messages");
+        messageSource.setCacheSeconds(10);
         return messageSource;
     }
 
