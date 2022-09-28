@@ -55,7 +55,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     public MessageSource messageSource() {
 
         //ReloadableResourceBundleMessageSource has the ability
-        //  to lreload message properties without recompiling or
+        //  to lreload messages properties without recompiling or
         //  restart the application, compare to ResourceBundleMessageSource
         ReloadableResourceBundleMessageSource messageSource =
                 new ReloadableResourceBundleMessageSource();
