@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.core.env.Environment;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.servlet.ViewResolver;
@@ -49,6 +50,15 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 //        bean.setValidationMessageSource(messageSource());
 //        return bean;
 //    }
+
+    @Bean
+    public MessageSource messageSource() {
+        ResourceBundleMessageSource messageSource =
+                new ResourceBundleMessageSource();
+
+        messageSource.setBasename("messages");
+        return messageSource;
+    }
 
     @Bean
     public ViewResolver viewResolver() {
