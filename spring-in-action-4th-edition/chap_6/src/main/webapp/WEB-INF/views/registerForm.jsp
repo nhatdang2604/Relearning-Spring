@@ -43,8 +43,8 @@
         <sf:input path="username" cssErrorClass="error"/><br/>
 
         <sf:label path="password"
-                  cssErrorClass="error">First name</sf:label>:
-        <sf:input path="password" cssErrorClass="error"/><br/>
+                  cssErrorClass="error">Password</sf:label>:
+        <sf:password path="password" cssErrorClass="error"/><br/>
 
         <input type="submit" value="Register"/>
     </sf:form>
