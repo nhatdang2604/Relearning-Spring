@@ -34,6 +34,8 @@
     <javax-validation-api.version>2.0.1.Final</javax-validation-api.version>
     <hibernate-validator.version>5.1.3.Final</hibernate-validator.version>
 
+    <tiles.version>3.0.8</tiles.version>
+
     <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -182,6 +184,18 @@
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>
       <version>${hibernate-validator.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.tiles</groupId>
+      <artifactId>tiles-extras</artifactId>
+      <version>${tiles.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.tiles</groupId>
+      <artifactId>tiles-api</artifactId>
+      <version>${tiles.version}</version>
     </dependency>
 
   </dependencies>
