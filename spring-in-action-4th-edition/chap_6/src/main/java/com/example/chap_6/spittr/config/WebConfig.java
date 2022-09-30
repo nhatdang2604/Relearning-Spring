@@ -14,6 +14,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
+import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 @Configuration
 @EnableWebMvc
@@ -74,23 +75,29 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         return messageSource;
     }
 
+//    @Bean
+//    public ViewResolver viewResolver() {
+//
+//        InternalResourceViewResolver resolver =
+//                new InternalResourceViewResolver();
+//
+//        String prefix = env.getProperty("view.prefix");
+//        String suffix = env.getProperty("view.suffix");
+//
+//        resolver.setPrefix(prefix);
+//        resolver.setSuffix(suffix);
+//
+//        //making bind the bean as ${} in jsp
+//        resolver.setExposeContextBeansAsAttributes(true);
+//
+//        return resolver;
+//    }
+
     @Bean
     public ViewResolver viewResolver() {
-
-        InternalResourceViewResolver resolver =
-                new InternalResourceViewResolver();
-
-        String prefix = env.getProperty("view.prefix");
-        String suffix = env.getProperty("view.suffix");
-
-        resolver.setPrefix(prefix);
-        resolver.setSuffix(suffix);
-
-        //making bind the bean as ${} in jsp
-        resolver.setExposeContextBeansAsAttributes(true);
-
-        return resolver;
+        return new TilesViewResolver();
     }
+
 
     @Override
     public void configureDefaultServletHandling(
