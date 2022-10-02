@@ -93,11 +93,15 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 //        return resolver;
 //    }
 
-    @Bean
-    public ViewResolver viewResolver() {
-        return new TilesViewResolver();
-    }
+//    @Bean
+//    public ViewResolver viewResolver() {
+//
+//        return new TilesViewResolver();
+//    }
 
+//    public ViewResolver viewResolver(SpringTemplateEngine templateEngine) {
+//
+//    }
 
     @Override
     public void configureDefaultServletHandling(
