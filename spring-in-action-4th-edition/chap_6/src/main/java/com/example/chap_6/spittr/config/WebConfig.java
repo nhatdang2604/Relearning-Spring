@@ -29,7 +29,6 @@ import org.thymeleaf.templateresolver.TemplateResolver;
         "com.example.chap_6.spittr.data"})
 @PropertySource(value={
         "classpath:application.properties",
-//        "classpath:ValidationMessages.properties"
 })
 public class WebConfig extends WebMvcConfigurerAdapter {
 
