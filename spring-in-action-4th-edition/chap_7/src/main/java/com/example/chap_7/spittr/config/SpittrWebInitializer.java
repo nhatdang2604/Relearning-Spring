@@ -2,6 +2,9 @@ package com.example.chap_7.spittr.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletRegistration;
+
 public class SpittrWebInitializer
     extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
@@ -18,4 +21,12 @@ public class SpittrWebInitializer
     protected String[] getServletMappings() {
         return new String[] {"/"};
     }
+
+//    @Override
+//    protected void customizeRegistration(ServletRegistration.Dynamic registration) {
+//        registration.setMultipartConfig(
+//                new MultipartConfigElement("/tmp/spittr/uploads")
+//        );
+//    }
 }
+
