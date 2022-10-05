@@ -3,6 +3,8 @@ package com.example.chap_7.spittr.data;
 import com.example.chap_7.spittr.Spitter;
 import org.springframework.stereotype.Repository;
 
+import javax.servlet.http.Part;
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,6 +29,34 @@ public class SpitterRepositoryImpl implements SpitterRepository {
         spitters.put(id, spitter);
 
         return spitter;
+    }
+
+    @Override
+    public int saveFile(Part part) {
+
+        String filename = part.getSubmittedFileName();
+        String path = "/tmp/spittr/uploads/";
+        String filepath = path + filename;
+        File file = new File(filepath);
+
+        //Create file if it's not exsited
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+            } catch (Exception exception) {
+                exception.printStackTrace();
+                return 1;
+            }
+        }
+
+        try {
+            part.write(filepath);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            return 2;
+        }
+
+        return 0;
     }
 
     @Override

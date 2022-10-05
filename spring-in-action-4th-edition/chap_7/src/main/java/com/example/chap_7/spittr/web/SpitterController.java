@@ -11,7 +11,9 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestPart;
 
+import javax.servlet.http.Part;
 import javax.validation.Valid;
 
 @Controller
@@ -37,6 +39,7 @@ public class SpitterController {
 
     @RequestMapping(value="${path.spitter.register}", method=RequestMethod.POST)
     public String processRegistration(
+            @RequestPart("profilePicture") Part profilePicture,
             @Valid Spitter spitter,
             Errors errors) {
 
@@ -45,6 +48,8 @@ public class SpitterController {
         }
 
         spitterRepository.save(spitter);
+
+
         return "redirect:" + ROOT + "/" + spitter.getUsername();
     }
 
