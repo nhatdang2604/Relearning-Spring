@@ -57,8 +57,6 @@ public class SpitterRepositoryImpl implements SpitterRepository {
             return 2;
         }
 
-
-        System.out.println(file.getAbsolutePath());
         return 0;
     }
 
