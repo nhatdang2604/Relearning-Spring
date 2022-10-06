@@ -7,6 +7,12 @@ import javax.servlet.ServletRegistration;
 
 public class SpittrWebInitializer
     extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+    public static final String TEMP_DIR_LOCATION = "./";
+    private static final int MAX_FILE_SIZE = 2097152; //2mb
+    private static final int MAX_REQUEST_SIZE = 4194304; //4mb
+    private static final int FILE_SIZE_THRESHOLD = 0;   //0mb
+
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class<?>[] {RootConfig.class};
@@ -26,8 +32,8 @@ public class SpittrWebInitializer
     protected void customizeRegistration(ServletRegistration.Dynamic registration) {
         registration.setMultipartConfig(
                 new MultipartConfigElement(
-                        "/tmp/spittr/uploads",
-                        2097152, 4194304, 0)
+                        TEMP_DIR_LOCATION,
+                        MAX_FILE_SIZE, MAX_REQUEST_SIZE, FILE_SIZE_THRESHOLD)
         );
     }
 }

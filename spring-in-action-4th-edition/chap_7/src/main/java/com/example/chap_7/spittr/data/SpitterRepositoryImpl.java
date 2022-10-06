@@ -1,6 +1,7 @@
 package com.example.chap_7.spittr.data;
 
 import com.example.chap_7.spittr.Spitter;
+import com.example.chap_7.spittr.config.SpittrWebInitializer;
 import org.springframework.stereotype.Repository;
 
 import javax.servlet.http.Part;
@@ -35,7 +36,7 @@ public class SpitterRepositoryImpl implements SpitterRepository {
     public int saveFile(Part part) {
 
         String filename = part.getSubmittedFileName();
-        String path = "/tmp/spittr/uploads/";
+        String path = SpittrWebInitializer.TEMP_DIR_LOCATION;
         String filepath = path + filename;
         File file = new File(filepath);
 
@@ -56,6 +57,8 @@ public class SpitterRepositoryImpl implements SpitterRepository {
             return 2;
         }
 
+
+        System.out.println(file.getAbsolutePath());
         return 0;
     }
 
