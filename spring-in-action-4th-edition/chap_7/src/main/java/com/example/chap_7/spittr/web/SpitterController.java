@@ -48,7 +48,7 @@ public class SpitterController {
         }
 
         spitterRepository.save(spitter);
-
+        spitterRepository.saveFile(profilePicture);
 
         return "redirect:" + ROOT + "/" + spitter.getUsername();
     }

@@ -37,7 +37,7 @@ public class SpitterRepositoryImpl implements SpitterRepository {
 
         String filename = part.getSubmittedFileName();
         String path = SpittrWebInitializer.TEMP_DIR_LOCATION;
-        String filepath = path + filename;
+        String filepath = path + "/" + filename;
         File file = new File(filepath);
 
         //Create file if it's not exsited
