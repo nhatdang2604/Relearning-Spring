@@ -77,7 +77,7 @@ public class SpittleController {
     ) {
         Spittle spittle = spittleRepository.findOne(spittleId);
         if (null == spittle) {
-            spittle = new Spittle();
+            throw new SpittleNotFoundException();
         }
         model.addAttribute(spittle);
 
