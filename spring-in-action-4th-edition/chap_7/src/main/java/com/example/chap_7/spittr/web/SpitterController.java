@@ -22,6 +22,8 @@ import javax.validation.Valid;
 public class SpitterController {
 
     private static final String PARAM_SPITTER_USERNAME = "username";
+    private static final String PARAM_SPITTER_ID = "spitterId";
+
     @Value("${path.spitter}")
     private String ROOT;
 
@@ -51,6 +53,7 @@ public class SpitterController {
         spitterRepository.save(spitter);
         spitterRepository.saveFile(profilePicture);
         model.addAttribute(PARAM_SPITTER_USERNAME, spitter.getUsername());
+        model.addAttribute(PARAM_SPITTER_ID, spitter.getId());
         return "redirect:" + ROOT + "/" + "{" + PARAM_SPITTER_USERNAME + "}";
     }
 
