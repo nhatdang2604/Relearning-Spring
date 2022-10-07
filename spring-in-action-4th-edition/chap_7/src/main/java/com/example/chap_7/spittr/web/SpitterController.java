@@ -65,7 +65,12 @@ public class SpitterController {
             @PathVariable(PARAM_SPITTER_USERNAME) String username,
             Model model
     ) {
-        Spitter spitter = spitterRepository.findByUsername(username);
+        Spitter spitter;
+        if (!model.containsAttribute(PARAM_SPITTER)) {
+            spitter = spitterRepository.findByUsername(username);
+        } else {
+            spitter = (Spitter) model.getAttribute(PARAM_SPITTER);
+        }
         model.addAttribute(spitter);
 
         return "profile";
