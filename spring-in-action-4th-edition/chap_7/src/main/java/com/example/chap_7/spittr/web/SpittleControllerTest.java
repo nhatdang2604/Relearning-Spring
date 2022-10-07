@@ -64,7 +64,7 @@ class SpittleControllerTest {
         SpittleController controller = new SpittleController(mockRepository);
 
         MockMvc mockMvc = placeholderBuilder(controller)
-                .setSingleView(new InternalResourceView("/WEB-INF/views/spittles.jsp"))
+                .setSingleView(new InternalResourceView("/WEB-INF/views/spittles.html"))
                 .build();
 
         String spittleListKey = "spittleList";
