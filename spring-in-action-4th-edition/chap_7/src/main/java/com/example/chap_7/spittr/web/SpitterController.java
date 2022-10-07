@@ -41,7 +41,8 @@ public class SpitterController {
     public String processRegistration(
             @RequestPart("profilePicture") Part profilePicture,
             @Valid Spitter spitter,
-            Errors errors) {
+            Errors errors,
+            Model model) {
 
         if (errors.hasErrors()) {
             return "registerForm";
@@ -49,8 +50,8 @@ public class SpitterController {
 
         spitterRepository.save(spitter);
         spitterRepository.saveFile(profilePicture);
-
-        return "redirect:" + ROOT + "/" + spitter.getUsername();
+        model.addAttribute(PARAM_SPITTER_USERNAME, spitter.getUsername());
+        return "redirect:" + ROOT + "/" + "{" + PARAM_SPITTER_USERNAME + "}";
     }
 
     @RequestMapping(value="/{" + PARAM_SPITTER_USERNAME + "}", method=RequestMethod.GET)
