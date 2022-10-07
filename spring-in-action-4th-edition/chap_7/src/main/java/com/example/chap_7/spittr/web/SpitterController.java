@@ -23,7 +23,7 @@ import javax.validation.Valid;
 public class SpitterController {
 
     private static final String PARAM_SPITTER_USERNAME = "username";
-    private static final String PARAM_SPITTER_ID = "spitterId";
+//    private static final String PARAM_SPITTER_ID = "spitterId";
     private static final String PARAM_SPITTER = "spitter";
 
     @Value("${path.spitter}")
