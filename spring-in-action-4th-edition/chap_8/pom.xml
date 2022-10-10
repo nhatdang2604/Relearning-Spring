@@ -7,14 +7,84 @@
   <version>1.0-SNAPSHOT</version>
   <name>chap_8 Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
+  <properties>
+    <junit.version>4.13.2</junit.version>
+    <hamcrest-core.version>2.2</hamcrest-core.version>
+    <mockito-core.version>4.8.0</mockito-core.version>
+
+    <!--Spring libraries-->
+    <spring-beans.version>5.3.23</spring-beans.version>
+    <spring-context.version>5.3.23</spring-context.version>
+    <spring-core.version>5.3.23</spring-core.version>
+    <spring-expression.version>5.3.23</spring-expression.version>
+    <spring-web.version>5.3.23</spring-web.version>
+    <spring-webmvc.version>5.3.23</spring-webmvc.version>
+    <spring-test.version>5.3.23</spring-test.version>
+    <spring-webflow.version>2.3.4.RELEASE</spring-webflow.version>
+
+    <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>${spring-beans.version}</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring-context.version}</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${spring-core.version}</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-expression</artifactId>
+      <version>${spring-expression.version}</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${spring-web.version}</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring-webmvc.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${spring-test.version}</version>
+      <!--      <scope>test</scope>-->
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.webflow</groupId>
+      <artifactId>spring-webflow</artifactId>
+      <version>${spring-webflow.version}</version>
     </dependency>
   </dependencies>
+
+
   <build>
     <finalName>chap_8</finalName>
   </build>
