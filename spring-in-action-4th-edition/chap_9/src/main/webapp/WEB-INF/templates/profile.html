@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+
+<head>
+    <title>Profile</title>
+
+    <link rel="stylesheet"
+          type="text/css"
+          th:href="@{/resources/css/style.css}"/>
+</head>
+<body>
+
+    <h1>Your Profile</h1>
+<!--    <c:out value="${spitter.username}"/> <br/>-->
+<!--    <c:out value="${spitter.firstName}"/>-->
+<!--        <c:out value="${spitter.lastName}"/>-->
+
+    <span th:text="${spitter.username}">test</span>
+    <span th:text="${spitter.firstName}">test</span>
+    <span th:text="${spitter.lastName}">test</span>
+
+</body>
+</html>
