@@ -37,29 +37,3 @@
     </global-transitions>
 
 </flow>
-
-<!--<?xml version="1.0" encoding="ISO-8859-1"?>-->
-<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
-<!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
-<!--xmlns:flow="http://www.springframework.org/schema/webflow-config"-->
-<!--xsi:schemaLocation=-->
-<!--               "http://www.springframework.org/schema/webflow-config-->
-<!--                http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.3.xsd-->
-<!--                http://www.springframework.org/schema/beans-->
-<!--                http://www.springframework.org/schema/beans/spring-beans.xsd">-->
-
-<!--&lt;!&ndash;    <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">&ndash;&gt;-->
-<!--&lt;!&ndash;        <property name="flowRegistry" ref="flowRegistry"/>&ndash;&gt;-->
-<!--&lt;!&ndash;    </bean>&ndash;&gt;-->
-
-<!--&lt;!&ndash;    <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">&ndash;&gt;-->
-<!--&lt;!&ndash;        <property name="flowExecutor" ref="flowExecutor"/>&ndash;&gt;-->
-<!--&lt;!&ndash;    </bean>&ndash;&gt;-->
-
-<!--&lt;!&ndash;    <flow:flow-executor id="flowExecutor"/>&ndash;&gt;-->
-<!--&lt;!&ndash;    <flow:flow-registry id="flowRegistry" base-path="/WEB-INF/flows">&ndash;&gt;-->
-<!--&lt;!&ndash;        <flow:flow-location-pattern value="*-flow.xml"/>&ndash;&gt;-->
-<!--&lt;!&ndash;    </flow:flow-registry>&ndash;&gt;-->
-<!--</beans>-->
-
-
