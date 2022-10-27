@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.core.env.Environment;
+import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.ViewResolver;
@@ -49,6 +50,11 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
         return tiles;
     }
+
+//    @Bean
+//    public DelegatingFilterProxy springSecurityFilterChain() {
+//        return new DelegatingFilterProxy();
+//    }
 
 //    @Bean
 //    public MessageSource messageSource() {
