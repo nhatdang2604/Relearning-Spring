@@ -1,5 +1,8 @@
 package com.example.chap_9.spittr.config;
 
+import com.example.chap_9.spittr.data.SpitterRepository;
+import com.example.chap_9.spittr.security.SpitterUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -26,11 +29,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //
 //    }
 
+    //In-mem authentication
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.inMemoryAuthentication()
+//                .withUser("user").password(passwordEncoder().encode("password")).roles("USER").and()
+//                .withUser("admin").password(passwordEncoder().encode("password")).roles("USER", "ADMIN");
+//
+//    }
+
+    @Autowired
+    private SpitterRepository spitterRepository;
+
+    //Custom authentication
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("user").password(passwordEncoder().encode("password")).roles("USER").and()
-                .withUser("admin").password(passwordEncoder().encode("password")).roles("USER", "ADMIN");
+        auth.userDetailsService(
+                new SpitterUserService(spitterRepository, passwordEncoder())
+        );
 
     }
 
