@@ -20,7 +20,20 @@ public class SpitterRepositoryImpl implements SpitterRepository {
     }
 
     public SpitterRepositoryImpl() {
-        spitters = new HashMap<>();
+        spitters = prebuildSpitters();
+    }
+
+    private Map<Long, Spitter> prebuildSpitters() {
+        Map<Long, Spitter> spitters = new HashMap<>();
+
+        //Add default spitter for custom authentication showcase
+        Spitter spitter = new Spitter(
+                getNextAvailableId(), "admin123", "admin123", "admin_first", "admin_last"
+        );
+
+        spitters.put(spitter.getId(), spitter);
+
+        return spitters;
     }
 
     @Override
