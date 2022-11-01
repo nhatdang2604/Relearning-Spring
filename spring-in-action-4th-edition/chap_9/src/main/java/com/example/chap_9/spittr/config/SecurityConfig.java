@@ -3,8 +3,11 @@ package com.example.chap_9.spittr.config;
 import com.example.chap_9.spittr.data.SpitterRepository;
 import com.example.chap_9.spittr.security.SpitterUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -16,7 +19,9 @@ import org.springframework.web.filter.DelegatingFilterProxy;
 
 @Configuration
 @EnableWebMvcSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+@PropertySource(value={
+        "classpath:application.properties",
+})public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 //    @Override
 //    protected void configure(HttpSecurity http) throws Exception {
@@ -41,6 +46,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private SpitterRepository spitterRepository;
 
+    @Value("${path.spittles}")
+    private String spittlesPath;
+
     //Custom authentication
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -48,6 +56,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 new SpitterUserService(spitterRepository, passwordEncoder())
         );
 
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+                .antMatchers("/spitters/me").authenticated()
+                .antMatchers(HttpMethod.POST, spittlesPath).authenticated()
+                .anyRequest().permitAll();
     }
 
     @Bean
