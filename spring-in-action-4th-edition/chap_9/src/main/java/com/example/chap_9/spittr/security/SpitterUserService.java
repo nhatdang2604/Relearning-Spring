@@ -21,7 +21,7 @@ public class SpitterUserService implements UserDetailsService {
 
     private final PasswordEncoder passwordEncoder;
 
-    private static final String SPITTER_AUTHORITY = "ROLE_SPITTER";
+    public static final String SPITTER_AUTHORITY = "ROLE_SPITTER";
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

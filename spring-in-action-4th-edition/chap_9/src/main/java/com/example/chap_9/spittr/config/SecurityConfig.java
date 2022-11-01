@@ -49,6 +49,9 @@ import org.springframework.web.filter.DelegatingFilterProxy;
     @Value("${path.spittles}")
     private String spittlesPath;
 
+    @Value("#{'${path.spitter}' + '${path.spitter.me}'}")
+    private String spitterMe;
+
     //Custom authentication
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -61,8 +64,8 @@ import org.springframework.web.filter.DelegatingFilterProxy;
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/spitters/me").authenticated()
-                .antMatchers(HttpMethod.POST, spittlesPath).authenticated()
+                .antMatchers(spitterMe).access("hasRole('${role.spitter}')")
+                .antMatchers(HttpMethod.GET, spittlesPath).access("hasRole('${role.spitter}')")
                 .anyRequest().permitAll();
     }
 
